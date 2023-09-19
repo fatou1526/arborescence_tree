@@ -1,9 +1,9 @@
-name: Csv Data Processing
+name: Data Processing
 on:
   workflow_dispatch:
   push:
     branches:
-    - main
+    - branche-1
   pull_request:
 
     
@@ -15,3 +15,14 @@ jobs:
       
       - name: Welcome
         run: python -c "print('Hello world, welcome to this workflow')"
+
+      - name: Install dependencies
+        run: |
+          python -m pipninstall --upgrade pip
+          pip install pandas
+          pip install numpy
+          pip install matplotlib
+          pip install scikit-learn
+
+      - name: Run Python module
+        run: python main.py
