@@ -4,6 +4,11 @@ This module contains methods to preprocess the data
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
 
 def load_data(filepath):
     # loading dataset
@@ -41,7 +46,33 @@ def preprocessing_outliers(data_df):
     return data_df
 
 
+def split_dataset(X, y):
+    # This method helps to split the data to train and test datasets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+    return X_train, X_test, y_train, y_test 
 
-    
+# label encoder
+def encoding(label):
+    le= LabelEncoder()
+    label =le.fit_transform(label)
+    return label
+
+# Normalization/Standardisation
+def normalize(features):
+    features = StandardScaler().fit_transform(features)
+    return features
+
+# Training
+def training(X_train, y_train, X_test):    
+    rfc = RandomForestClassifier(n_estimators=100, random_state=24)
+    rfc.fit(X_train, y_train)
+    y_pred = rfc.predict(X_test)
+    return y_pred
+
+# Evaluate model
+def evaluate_model(y_test, y_pred):
+    accuracy = accuracy_score(y_test, y_pred)
+    report = classification_report(y_test, y_pred)
+    return accuracy, report
 
 

@@ -36,3 +36,5 @@ jobs:
       - name: Run Python module
         run: python src/process.py
 
+      - name: Run Python module
+        run: python src/train.py
