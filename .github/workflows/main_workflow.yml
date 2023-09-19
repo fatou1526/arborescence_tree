@@ -1,0 +1,17 @@
+name: Csv Data Processing
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+  pull_request:
+
+    
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Welcome
+        run: python -c "print('Hello world, welcome to this workflow')"
