@@ -20,6 +20,7 @@ jobs:
         run: |
           python -m pipninstall --upgrade pip
           pip install requests
+          pip install -r requirements.txt
           pip install pandas
           pip install numpy
           pip install matplotlib

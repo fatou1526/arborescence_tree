@@ -21,7 +21,7 @@ def generate_project_tree():
     with open('.gitignore', 'w') as gitignore:
         gitignore.write(gitignore_content)
 
-    
+    """
     # Création de l'arborescence du projet
     os.makedirs('data/cleaned')
     os.makedirs('data/processed')
@@ -31,7 +31,12 @@ def generate_project_tree():
     os.makedirs('notebooks')
     os.makedirs('reports')
     os.makedirs('src')
+    """
+    with open('Makefile', 'w') as makefile:
+        makefile.write('Makefile')
 
+    with open('requirements.txt', 'w') as requirements:
+        requirements.write('numpy\npandas\nmatplotlib\nscikit-learn\njupyter\n')
 
     # Initialisation du dépôt Git
     subprocess.run(['git', 'init'])
@@ -40,7 +45,7 @@ def generate_project_tree():
     subprocess.run(['git', 'add', '.'])
 
     # Commit des fichiers ajoutés
-    subprocess.run(['git', 'commit', '-m', 'Adding folders (data, docs, models, notebooks, reports, src) to the repo'])
+    subprocess.run(['git', 'commit', '-m', 'Adding makefile and requirements to the repo'])
 
     # Push des fichiers créer
     subprocess.run(['git', 'push', 'origin', 'branche-1'])
