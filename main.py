@@ -37,29 +37,19 @@ def generate_project_tree():
 
     with open('requirements.txt', 'w') as requirements:
         requirements.write('numpy\npandas\nmatplotlib\nscikit-learn\njupyter\n')
-    """
+    
 
     # Création du fichier main_notebook.ipynb
     with open('notebooks/main.ipynb', 'w') as notebook:
         notebook.write('{ "cells": [], "metadata": {}, "nbformat": 4, "nbformat_minor": 2 }')
 
-    # Création du fichier utils.py
-    with open('src/utils.py', 'w') as utils:
-        utils.write('"""Contient les fonctions utilitaires pour le projet."""\n\n')
-        utils.write('def my_utils():\n')
-        utils.write('    pass\n')
-
-    # Création du fichier process.py
-    with open('src/process.py', 'w') as process:
-        process.write('"""Contient le preprocessing des données."""\n\n')
-        process.write('def processing():\n')
-        process.write('    pass\n')
-
+    
+    """
     # Création du fichier train.py
-    with open('src/utils.py', 'w') as utils:
-        utils.write(' """Contient entrainement du modele."""\n\n')
-        utils.write('def training():\n')
-        utils.write('    pass\n')
+    with open('src/train.py', 'w') as training:
+        training.write(' """Contient entrainement du modele."""\n\n')
+        training.write('def training():\n')
+        training.write('    pass\n')
 
     # Initialisation du dépôt Git
     subprocess.run(['git', 'init'])
@@ -68,7 +58,7 @@ def generate_project_tree():
     subprocess.run(['git', 'add', '.'])
 
     # Commit des fichiers ajoutés
-    subprocess.run(['git', 'commit', '-m', 'Add notebooks and python scripts'])
+    subprocess.run(['git', 'commit', '-m', 'Add the training script to src'])
 
     # Push des fichiers créer
     subprocess.run(['git', 'push', 'origin', 'branche-1'])
