@@ -19,10 +19,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pipninstall --upgrade pip
+          pip install requests
           pip install pandas
           pip install numpy
           pip install matplotlib
           pip install scikit-learn
+
 
       - name: Run Python module
         run: python main.py
