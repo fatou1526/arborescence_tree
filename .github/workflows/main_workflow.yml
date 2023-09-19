@@ -27,5 +27,12 @@ jobs:
           pip install scikit-learn
 
 
+      #- name: Run Python module
+      #  run: python main.py
+
       - name: Run Python module
-        run: python main.py
+        run: python utils.py
+
+      - name: Run Python module
+        run: python process.py
+
