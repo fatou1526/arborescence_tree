@@ -22,7 +22,15 @@ def generate_project_tree():
         gitignore.write(gitignore_content)
 
     
-
+    # Création de l'arborescence du projet
+    os.makedirs('data/cleaned')
+    os.makedirs('data/processed')
+    os.makedirs('data/raw')
+    os.makedirs('docs')
+    os.makedirs('models')
+    os.makedirs('notebooks')
+    os.makedirs('reports')
+    os.makedirs('src')
 
 
     # Initialisation du dépôt Git
@@ -32,7 +40,7 @@ def generate_project_tree():
     subprocess.run(['git', 'add', '.'])
 
     # Commit des fichiers ajoutés
-    subprocess.run(['git', 'commit', '-m', 'Initial commit'])
+    subprocess.run(['git', 'commit', '-m', 'Adding folders (data, docs, models, notebooks, reports, src) to the repo'])
 
     # Push des fichiers créer
     subprocess.run(['git', 'push', 'origin', 'branche-1'])
