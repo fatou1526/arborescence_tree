@@ -21,7 +21,7 @@ def generate_project_tree():
     with open('.gitignore', 'w') as gitignore:
         gitignore.write(gitignore_content)
 
-    """
+    
     # Création de l'arborescence du projet
     os.makedirs('data/cleaned')
     os.makedirs('data/processed')
@@ -43,8 +43,18 @@ def generate_project_tree():
     with open('notebooks/main.ipynb', 'w') as notebook:
         notebook.write('{ "cells": [], "metadata": {}, "nbformat": 4, "nbformat_minor": 2 }')
 
+    # Création du fichier utils.py
+    with open('src/utils.py', 'w') as utils:
+        utils.write('"""Contient les fonctions utilitaires pour le projet."""\n\n')
+        utils.write('def my_utils():\n')
+        utils.write('    pass\n')
+
+    # Création du fichier process.py
+    with open('src/process.py', 'w') as process:
+        process.write('"""Contient le preprocessing des données."""\n\n')
+        process.write('def processing():\n')
+        process.write('    pass\n')
     
-    """
     # Création du fichier train.py
     with open('src/train.py', 'w') as training:
         training.write(' """Contient entrainement du modele."""\n\n')
