@@ -7,7 +7,7 @@ from utils import training
 from utils import evaluate_model
 
 # Loading cleaned data
-data = load_data("C:/Users/USER/Documents/Master2 DIT/Outil versioning/branche1/arborescence_tree/data/cleaned/cleaned_data.csv")
+data = load_data("data/cleaned/cleaned_data.csv")
 
 # Splitting data
 y = data['label']
